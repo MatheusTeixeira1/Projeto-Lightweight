@@ -6,37 +6,41 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Stock {
+public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idProduct;
-	private int idCreator;
+	private Long idProduct;
+	private Long idCreator;
+	private Double price;
 	private String name;
 	private String description;
 	private ProductType productType;
 	private Double rawWeight;
 	private int amount;
 	
+	public Product() {
+		super();
+	}
 	
-	
-	public Stock(int idProduct, int idCreator, String name, String description, ProductType productType,
+	public Product(Long idProduct, Long idCreator, double price, String name, String description, ProductType productType,
 			Double rawWeight, int amount) {
 		super();
 		this.idProduct = idProduct;
 		this.idCreator = idCreator;
+		this.price = price;
 		this.name = name;
 		this.description = description;
-		this.productType = productType;
 		this.rawWeight = rawWeight;
 		this.amount = amount;
+		this.productType = productType;
 	}
 	
 	
 	
-	public int getIdProduct() {
+	public Long getIdProduct() {
 		return idProduct;
 	}
-	public void setIdProduct(int idProduct) {
+	public void setIdProduct(Long idProduct) {
 		this.idProduct = idProduct;
 	}
 	public String getName() {
@@ -45,10 +49,10 @@ public class Stock {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getIdCreator() {
+	public Long getIdCreator() {
 		return idCreator;
 	}
-	public void setIdCreator(int idCreator) {
+	public void setIdCreator(Long idCreator) {
 		this.idCreator = idCreator;
 	}
 	public String getDescription() {
@@ -74,6 +78,18 @@ public class Stock {
 	}
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+
+
+
+	public double getPrice() {
+		return price;
+	}
+
+
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 	
 	

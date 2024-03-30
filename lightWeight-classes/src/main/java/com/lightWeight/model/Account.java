@@ -1,7 +1,5 @@
 package com.lightWeight.model;
 
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,22 +11,21 @@ public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idConta;
-	@Enumerated(EnumType.STRING)
-	private	AccountType accountType;
 	
-	private String nickname;
+	private String firstname;
 	private String surname;
+	private String nickname;
 	private String cpf;
 	private String email;
 	private String phoneNumber;
 	
 	//---Constructor---
 	
-	public Account(int idConta, AccountType accountType, String nickname, String surname, String cpf, String email,
+	public Account(int idConta, String nickname, String firstname, String surname, String cpf, String email,
 			String phoneNumber) {
 		super();
 		this.idConta = idConta;
-		this.accountType = accountType;
+		this.firstname = firstname;
 		this.nickname = nickname;
 		this.surname = surname;
 		this.cpf = cpf;
@@ -43,12 +40,6 @@ public class Account {
 	}
 	public void setIdConta(int idConta) {
 		this.idConta = idConta;
-	}
-	public AccountType getAccountType() {
-		return accountType;
-	}
-	public void setAccountType(AccountType accountType) {
-		this.accountType = accountType;
 	}
 	public String getNickname() {
 		return nickname;
@@ -79,6 +70,14 @@ public class Account {
 	}
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 	
 	

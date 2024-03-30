@@ -9,9 +9,9 @@ public class Employee extends Account{
 	
 	//---Constructor---
 	
-	public Employee(int idConta, AccountType accountType, String nickname, String surname, String cpf, String email,
+	public Employee(int idConta, String nickname,String firstname, String surname, String cpf, String email,
 			String phoneNumber, double wage, String document) {
-		super(idConta, accountType, nickname, surname, cpf, email, phoneNumber);
+		super(idConta, firstname, nickname, surname, cpf, email, phoneNumber);
 		this.wage = wage;
 		this.document = document;
 	}

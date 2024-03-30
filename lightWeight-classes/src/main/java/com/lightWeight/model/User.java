@@ -11,9 +11,9 @@ public class User extends Account{
 	
 	//---Constructor---
 	
-	public User(int idConta, AccountType accountType, String nickname, String surname, String cpf, String email,
+	public User(int idConta, String nickname, String surname, String firstname, String cpf, String email,
 			String phoneNumber, Date last_Date_Of_Membership, Date membership_Expiration_Date) {
-		super(idConta, accountType, nickname, surname, cpf, email, phoneNumber);
+		super(idConta, nickname,firstname, surname, cpf, email, phoneNumber);
 		this.last_Date_Of_Membership = last_Date_Of_Membership;
 		this.membership_Expiration_Date = membership_Expiration_Date;
 	}
